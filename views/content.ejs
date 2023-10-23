@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Dictionary</title>
+   
+</head>
+<body>
+    <section class="header">
+        <h1>Type the word to find the meaning:</h1>
+        <form action="/api" method="post">
+            <input type="text" name="word" placeholder="ready to know the meaning?">
+            <button type="submit" class="buton">find</button>
+        </form>
+    </section>
+    <div class="ans">
+        <% if(locals.er) { %>
+            <h1>sorry, could not find such word <%= er.message %></h1>
+        <% } else { 
+            let initial=0 %>
+            <% if(locals.wrd) { %>
+                <h1 class="wrd">word: <%= wrd %></h1>
+            <% } %>
+            <% if(locals.sound){%>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Retrieve the sound URL passed from the server
+                    const soundUrl = '<%= sound %>'; // EJS tag to output the value
+        
+                    function playSound() {
+                        const audio = new Audio(soundUrl);
+                        audio.play();
+                    }
+        
+                    // Call playSound() when a button is clicked, for example
+                    document.getElementById('playButton').addEventListener('click', playSound);
+                });
+            </script>
+            <img src="images/volume.png"id="playButton">
+ 
+            
+            
+          <%  }%>
+            <% if(locals.meaning) { 
+                initial=1;%>
+                <div class="container">
+                    <div class="row">
+                        <% for(let i=0; i<meaning.length; i++) { %>
+                            <div class="col">
+                                <div class="card card1">
+                                    <div class="content">
+                                    <p class="leftcnt">Part of Speech: <%= meaning[i].partOfSpeech %></p>
+                                    <p class="leftcnt">Definition:</p>
+                                    <% for(let k=0; k<meaning[i].definitions.length;k++){ %>
+                                    <p><%= meaning[i].definitions[k].definition %></p>
+                                    <% } %>
+
+                                    <% if(meaning[i].synonyms!="") { %>
+                                        <p class="leftcnt">Synonyms:</p>
+                                        <ul>
+                                            <% for(let j=0; j<meaning[i].synonyms.length; j++) { %>
+                                                <li><%= meaning[i].synonyms[j] %></li>
+                                            <% } %>
+                                        </ul>
+                                    <% } %>
+                                </div>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            <% }else{ %>
+                <br><br><br>
+                <%if(initial!=0){ %>
+                <h1>try Checking your internet!!</h1>
+                <% } %>
+           
+        <% }} %> 
+             
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+body{
+    text-align: center;
+    overflow-y: scroll;
+    
+    
+
+  color:white;
+  background-color: whitesmoke;
+    
+
+}
+.wrd{
+    display: inline;
+}
+#playButton{
+    height: 40px;
+    width: 40px;
+    display: inline;
+    position: relative;
+    left:20px;
+    bottom:10px;
+}
+
+section.index{
+    height: 830px;
+    margin-top:10%;
+    display:flex;
+
+}
+.header{
+    padding-top: 5%;
+    background-color: #23344E;
+    
+}
+.col{
+    display:flex;
+    position: relative;;
+}
+h3{
+    margin:auto;
+    font-size: 4rem;
+    position:relative;
+    top: 0%;
+    }
+.btn{
+    margin:auto;
+    position: absolute;
+    bottom:20px;
+    left:40%;
+    background-color: #67B7C9;
+}
+.container{
+    margin: auto;
+    margin-top:50px;
+}
+.buton{
+    border-radius: 20%;
+    color:#23344E;
+    font-weight:bold;
+}
+img{
+    border-radius: 10%;
+    border: 2px;
+    border-color: #35464a;
+}
+input{
+    width:500px;
+    text-align: center;
+    color: black;
+    margin:2%;
+}
+.ans{
+    height: 700px;
+    background-color: whitesmoke;
+    color:#23344E;
+
+    
+}
+.card1{
+    width:300px;
+    perspective: 1000px; /* Add perspective to create 3D effect */
+    transition: transform 0.5s;
+    text-align: left;
+    --bs-card-border-radius:4%;
+    
+    border: 0px;
+    
+
+    }
+    .card1:hover {
+        transform:  translateZ(+80px); /* Apply the 3D transform effect */
+    }
+    .content {
+        width: 300px;
+        height: 344px;
+        padding-left: 4%;
+        padding-right: 20px;
+        border-radius:4%;
+        background-color: hsla(219, 69%, 25%, 0.56);
+        color:black;
+        transition: transform 0.5s;
+        overflow-y: scroll;
+        
+    }
+    .content:hover{
+        transform:  translateZ(+80px);
+    }
+    .leftcnt{
+       font-weight:bold;
+
+    }
+    
+      
