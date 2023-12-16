@@ -21,8 +21,8 @@ app.post("/api",async(req,res)=>
     let list=result.data[0].meanings;
     
     var sound1;
-    if(result.data[0].phonetics[0])
-      sound1=result.data[0].phonetics[0].audio;
+    if(result.data[0].phonetics[0]||result.data[0].phonetics[1])
+      sound1=result.data[0].phonetics[0].audio||result.data[0].phonetics[1].audio;
     else{
         sound1='';
     }

@@ -30,9 +30,10 @@
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     // Retrieve the sound URL passed from the server
-                    const soundUrl = '<%= sound %>'; // EJS tag to output the value
+                    // EJS tag to output the value
         
                     function playSound() {
+                        const soundUrl = '<%= sound %>';
                         const audio = new Audio(soundUrl);
                         audio.play();
                     }
@@ -56,9 +57,11 @@
                                     <div class="content">
                                     <p class="leftcnt">Part of Speech: <%= meaning[i].partOfSpeech %></p>
                                     <p class="leftcnt">Definition:</p>
+                                    <ul>
                                     <% for(let k=0; k<meaning[i].definitions.length;k++){ %>
-                                    <p><%= meaning[i].definitions[k].definition %></p>
+                                    <li><p><%= meaning[i].definitions[k].definition %></p></li>
                                     <% } %>
+                                   </ul>
 
                                     <% if(meaning[i].synonyms!="") { %>
                                         <p class="leftcnt">Synonyms:</p>
