@@ -15,7 +15,6 @@ app.get("/content",(req,res)=>
 app.post("/api",async(req,res)=>
 {
     let word=req.body.word;
-    console.log(word);
     try{
     const result=await axios.get("https://api.dictionaryapi.dev/api/v2/entries/en/"+word);
     let list=result.data[0].meanings;
@@ -33,8 +32,7 @@ app.post("/api",async(req,res)=>
     }
    
     
-   console.log(sound1);
-    res.render("content.ejs",{meaning:list,wrd:word,sound:sound1});
+   res.render("content.ejs",{meaning:list,wrd:word,sound:sound1});
     }
     catch(error)
     {  console.log(error);
