@@ -35,8 +35,12 @@ app.post("/api",async(req,res)=>
    res.render("content.ejs",{meaning:list,wrd:word,sound:sound1});
     }
     catch(error)
-    {  console.log(error);
-        res.render("content.ejs",{er:error.response})
+    {   console.log(error.response);
+      if(error.response)
+           res.render("content.ejs",{er:error.response.data.message});
+      else{
+        res.render("content.ejs",{er:"check your internet connection 🥺 "})
+      }
     }
 
 });
