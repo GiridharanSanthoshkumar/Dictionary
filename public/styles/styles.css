@@ -1,13 +1,15 @@
 body{
     text-align: center;
-    overflow-y: scroll;
-    
-    
-
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
   color:white;
   background-color: whitesmoke;
     
 
+}
+.col{
+    margin-top: 20px;
 }
 .wrd{
     display: inline;
@@ -21,26 +23,28 @@ body{
     bottom:10px;
 }
 
-section.index{
+section .index{
     height: 830px;
     margin-top:10%;
     display:flex;
 
 }
+
 .header{
-    padding-top: 5%;
+    padding-top: 2%;
     background-color: #23344E;
     
+}
+.header h1{
+    margin-bottom: 20px;
 }
 .col{
     display:flex;
     position: relative;;
 }
 h3{
-    margin:auto;
-    font-size: 4rem;
-    position:relative;
-    top: 0%;
+    font-size: 3rem;
+    
     }
 .btn{
     margin:auto;
@@ -50,24 +54,25 @@ h3{
     background-color: #67B7C9;
 }
 .container{
-    margin: auto;
-    margin-top:50px;
-}
+   }
 .buton{
-    border-radius: 20%;
-    color:#23344E;
-    font-weight:bold;
-}
-img{
-    border-radius: 10%;
-    border: 2px;
-    border-color: #35464a;
+    background: none;
+    border:0px;
+    color:white;
 }
 input{
     width:500px;
     text-align: center;
-    color: black;
+    color: whitesmoke;
+    font-size: 2rem;
     margin:2%;
+    background: none;
+    height:50px;
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    outline:none;
+
 }
 .ans{
     height: 700px;
