@@ -9,7 +9,10 @@ body{
 
 }
 .col{
-    margin-top: 20px;
+    margin-top: 5%;
+    align-items: center;
+    margin-bottom: 2%;
+    justify-content: center;
 }
 .wrd{
     display: inline;
@@ -21,6 +24,7 @@ body{
     position: relative;
     left:20px;
     bottom:10px;
+    
 }
 
 section .index{
